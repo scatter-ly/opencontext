@@ -64,3 +64,60 @@ spec:
   type: infocard
   lifecycle: production
   owner: [scatter-ly/eng-squirrel]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Team
+metadata:
+  namespace: scatter-ly
+  name: team-squirrel
+  description: Squirrel Team
+  links:
+    - url: https://example.com/squirrel-team-handbook
+      title: Team Handbook
+spec:
+  type: department
+  profile:
+    displayName: Team Squirrel
+    email: team-squirrel@scatterly.com
+    picture: https://avatars.dicebear.com/api/identicon/team-squirrel@example.com.svg?background=%23fff&margin=2
+    timezone: America/New_York
+    slackHandle: squirrel_team
+    pagerHandle: squirrel_team
+  children: [scatter-ly/eng-squirrel, scatter-ly/prod-squirrel]
+  members: [scatter-ly/alchen99, scatter-ly/bdwalter, scatter-ly/jwithington]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Team
+metadata:
+  namespace: scatter-ly
+  name: team-raccoon
+  description: Raccoon Team
+  links:
+    - url: https://example.com/raccoon-team-handbook
+      title: Team Handbook
+spec:
+  type: department
+  profile:
+    displayName: Team Raccoon
+    email: team-raccoon@scatterly.com
+    picture: https://avatars.dicebear.com/api/identicon/catalog-eng@example.com.svg?background=%23fff&margin=25
+    timezone: America/Los_Angeles
+    slackHandle: raccoon_team
+    pagerHandle: raccoon_team
+  children: [scatter-ly/eng-raccoon, scatter-ly/prod-raccoon]
+  members: [scatter-ly/aeschright, scatter-ly/bcornils, scatter-ly/chris-schnaidt]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Scheme
+metadata:
+  namespace: scatter-ly
+  name: orchard
+  description: Everything related to the squirrel orchard project
+  links:
+    - url: https://orchard.scatterly.com
+      title: Orchard here
+    - url: http://scatterly.com/schemes/orchard/dashboard
+      title: Orchard Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-squirrel]
