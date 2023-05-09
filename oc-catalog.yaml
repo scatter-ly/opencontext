@@ -7,3 +7,60 @@ metadata:
 spec:
   owner: [scatter-ly/eng-squirrel, scatter-ly/prod-squirrel]
   scheme: scatter-ly/orchard
+---
+apiVersion: opencontext.com/v1alpha1
+kind: AuxComponent
+metadata:
+  namespace: scatter-ly
+  name: eng-raccoon-info
+  title: Eng Raccoon Info
+  description: Additional links for Eng Raccoon
+  links:
+    - url: https://slack.com
+      title: Slack
+      icon: chat
+    - url: https://jira.com
+      title: Jira
+      icon: dashboard
+spec:
+  type: infocard
+  lifecycle: production
+  owner: [scatter-ly/eng-raccoon]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: AuxComponent
+metadata:
+  namespace: scatter-ly
+  name: eng-raccoon-cloud-info
+  title: Eng Raccoon Cloud Info
+  description: Additional links for Eng Raccoon Cloud
+  links:
+    - url: https://slack.com
+      title: Slack
+      icon: chat
+    - url: https://jira.com
+      title: Jira
+      icon: dashboard
+spec:
+  type: infocard
+  lifecycle: production
+  owner: [scatter-ly/eng-raccoon-cloud]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: AuxComponent
+metadata:
+  namespace: scatter-ly
+  name: eng-squirrel-info
+  title: Engineering Squirrel Info
+  description: Additional links for Engineering Squirrel
+  links:
+    - url: https://slack.com
+      title: Slack
+      icon: chat
+    - url: https://jira.com
+      title: Jira
+      icon: dashboard
+spec:
+  type: infocard
+  lifecycle: production
+  owner: [scatter-ly/eng-squirrel]
