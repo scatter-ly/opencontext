@@ -1,9 +1,9 @@
 apiVersion: opencontext.com/v1alpha1
-kind: Platform
+kind: Service
 metadata:
   namespace: scatter-ly
   name: crates
-  description: Shipping & receiving platform
+  description: Shipping & receiving service
 spec:
   owner: [scatter-ly/eng-squirrel, scatter-ly/prod-squirrel]
   scheme: scatter-ly/orchard
