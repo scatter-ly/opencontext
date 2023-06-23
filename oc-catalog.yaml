@@ -6,7 +6,7 @@ metadata:
   description: Shipping & receiving service
 spec:
   owner: [scatter-ly/eng-squirrel, scatter-ly/prod-squirrel]
-  scheme: scatter-ly/orchard
+  platform: scatter-ly/orchard
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: AuxComponent
@@ -108,7 +108,7 @@ spec:
   members: [scatter-ly/aeschright, scatter-ly/bcornils, scatter-ly/chris-schnaidt]
 ---
 apiVersion: opencontext.com/v1alpha1
-kind: Scheme
+kind: Platform
 metadata:
   namespace: scatter-ly
   name: orchard
@@ -116,7 +116,7 @@ metadata:
   links:
     - url: https://orchard.scatterly.com
       title: Orchard here
-    - url: http://scatterly.com/schemes/orchard/dashboard
+    - url: http://scatterly.com/platform/orchard/dashboard
       title: Orchard Metrics Dashboard
       icon: dashboard
 spec:
