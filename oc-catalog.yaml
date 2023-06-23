@@ -1,4 +1,44 @@
 apiVersion: opencontext.com/v1alpha1
+kind: Scheme
+metadata:
+  namespace: scatter-ly
+  name: blue-sky
+  description: Everything related to the raccoon Blue Sky Buffet project
+  links:
+    - url: https://buffet.example.com
+      title: Project diagrams
+    - url: http://example.com/schemes/orchard/dashboard
+      title: Buffet Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-raccoon]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Platform
+metadata:
+  namespace: scatter-ly
+  name: retail
+  description: User experience platform
+spec:
+  owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
+  scheme: scatter-ly/blue-sky
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Scheme
+metadata:
+  namespace: scatter-ly
+  name: orchard
+  description: Everything related to the squirrel orchard project
+  links:
+    - url: https://orchard.example.com
+      title: Orchard here
+    - url: http://example.com/schemes/orchard/dashboard
+      title: Orchard Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-squirrel]
+---
+apiVersion: opencontext.com/v1alpha1
 kind: Platform
 metadata:
   namespace: scatter-ly
@@ -69,6 +109,35 @@ apiVersion: opencontext.com/v1alpha1
 kind: Team
 metadata:
   namespace: scatter-ly
+  name: engineering
+  description: Engineering Team
+spec:
+  type: virt-org
+  profile:
+    displayName: Engineering Team
+    email: engineering@example.com
+    picture: https://avatars.dicebear.com/api/identicon/engineering@example.com.svg?background=%23fff&margin=2
+  children:
+    [scatter-ly/eng-squirrel, scatter-ly/eng-raccoon, scatter-ly/reviewers, scatter-ly/docs-core, scatter-ly/dev-core, scatter-ly/maintainers]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Team
+metadata:
+  namespace: scatter-ly
+  name: product
+  description: Product team
+spec:
+  type: virt-org
+  profile:
+    displayName: Product Team
+    email: product@example.com
+    picture: https://avatars.dicebear.com/api/identicon/product@example.com.svg?background=%23fff&margin=2
+  children: [scatter-ly/prod-squirrel, scatter-ly/prod-raccoon]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Team
+metadata:
+  namespace: scatter-ly
   name: team-squirrel
   description: Squirrel Team
   links:
@@ -106,18 +175,4 @@ spec:
     pagerHandle: raccoon_team
   children: [scatter-ly/eng-raccoon, scatter-ly/prod-raccoon]
   members: [scatter-ly/aeschright, scatter-ly/bcornils, scatter-ly/chris-schnaidt]
----
-apiVersion: opencontext.com/v1alpha1
-kind: Scheme
-metadata:
-  namespace: scatter-ly
-  name: orchard
-  description: Everything related to the squirrel orchard project
-  links:
-    - url: https://orchard.scatterly.com
-      title: Orchard here
-    - url: http://scatterly.com/schemes/orchard/dashboard
-      title: Orchard Metrics Dashboard
-      icon: dashboard
-spec:
-  owner: [scatter-ly/team-squirrel]
+
