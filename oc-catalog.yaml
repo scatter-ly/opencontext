@@ -175,4 +175,107 @@ spec:
     pagerHandle: raccoon_team
   children: [scatter-ly/eng-raccoon, scatter-ly/prod-raccoon]
   members: [scatter-ly/aeschright, scatter-ly/bcornils, scatter-ly/chris-schnaidt]
-
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Platform
+metadata:
+  namespace: scatter-ly
+  name: aws
+  title: AWS
+  description: Amazon Web Services
+spec:
+  owner: [scatter-ly/eng-raccoon-aws]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: aws
+  title: AWS
+  description: Amazon Web Services
+#  annotations:
+#    pagerduty.com/integration-key: 'PAGERDUTY_INTEGRATION_KEY'
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-raccoon-aws]
+  region: us-east-1
+  platform: [scatter-ly/aws]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: aws-us
+  title: AWS US
+  description: Amazon Web Services
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-raccoon-aws]
+  region: us-east-1
+  partOf: [scatter-ly/aws]
+  platform: [scatter-ly/aws]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Platform
+metadata:
+  namespace: scatter-ly
+  name: gcp
+  title: GCP
+  description: Google Cloud Platform
+spec:
+  owner: [scatter-ly/eng-racoon-gcp]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: gcp
+  title: GCP
+  description: Google Cloud Platform
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-racoon-gcp]
+  region: global
+  platform: [scatter-ly/gcp]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: gcp-global
+  title: GCP Global
+  description: Google Cloud Platform
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-racoon-gcp]
+  region: global
+  partOf: [scatter-ly/gcp]
+  platform: [scatter-ly/gcp]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: gcp-us
+  title: GCP US
+  description: Google Cloud Platform
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-racoon-gcp]
+  region: US
+  partOf: [scatter-ly/gcp-global]
+  platform: [scatter-ly/gcp]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Datacenter
+metadata:
+  namespace: scatter-ly
+  name: gcp-us-central1
+  title: GCP US Central 1
+  description: Google Cloud Platform
+spec:
+  type: cloud
+  owner: [scatter-ly/eng-racoon-gcp]
+  region: US
+  partOf: [scatter-ly/gcp-global, scatter-ly/gcp-us]
+  platform: [scatter-ly/gcp]
