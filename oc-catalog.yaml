@@ -42,11 +42,51 @@ apiVersion: opencontext.com/v1alpha1
 kind: Platform
 metadata:
   namespace: scatter-ly
+  name: blue-sky
+  description: Everything related to the raccoon Blue Sky Buffet project
+  links:
+    - url: https://buffet.example.com
+      title: Project diagrams
+    - url: http://example.com/schemes/orchard/dashboard
+      title: Buffet Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-raccoon]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Service
+metadata:
+  namespace: scatter-ly
+  name: retail
+  description: User experience service
+spec:
+  owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
+  platform: scatter-ly/blue-sky
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Platform
+metadata:
+  namespace: scatter-ly
+  name: orchard
+  description: Everything related to the squirrel orchard project
+  links:
+    - url: https://orchard.example.com
+      title: Orchard here
+    - url: http://example.com/schemes/orchard/dashboard
+      title: Orchard Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-squirrel]
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Service
+metadata:
+  namespace: scatter-ly
   name: crates
-  description: Shipping & receiving platform
+  description: Shipping & receiving service
 spec:
   owner: [scatter-ly/eng-squirrel, scatter-ly/prod-squirrel]
-  scheme: scatter-ly/orchard
+  platform: scatter-ly/orchard
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: AuxComponent
@@ -177,7 +217,7 @@ spec:
   members: [scatter-ly/aeschright, scatter-ly/bcornils, scatter-ly/chris-schnaidt]
 ---
 apiVersion: opencontext.com/v1alpha1
-kind: Platform
+kind: Service
 metadata:
   namespace: scatter-ly
   name: aws
@@ -199,7 +239,7 @@ spec:
   type: cloud
   owner: [scatter-ly/eng-raccoon-aws]
   region: us-east-1
-  platform: [scatter-ly/aws]
+  service: [scatter-ly/aws]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Datacenter
@@ -213,10 +253,10 @@ spec:
   owner: [scatter-ly/eng-raccoon-aws]
   region: us-east-1
   partOf: [scatter-ly/aws]
-  platform: [scatter-ly/aws]
+  service: [scatter-ly/aws]
 ---
 apiVersion: opencontext.com/v1alpha1
-kind: Platform
+kind: Service
 metadata:
   namespace: scatter-ly
   name: gcp
@@ -236,7 +276,7 @@ spec:
   type: cloud
   owner: [scatter-ly/eng-racoon-gcp]
   region: global
-  platform: [scatter-ly/gcp]
+  service: [scatter-ly/gcp]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Datacenter
@@ -250,7 +290,7 @@ spec:
   owner: [scatter-ly/eng-racoon-gcp]
   region: global
   partOf: [scatter-ly/gcp]
-  platform: [scatter-ly/gcp]
+  service: [scatter-ly/gcp]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Datacenter
@@ -264,7 +304,7 @@ spec:
   owner: [scatter-ly/eng-racoon-gcp]
   region: US
   partOf: [scatter-ly/gcp-global]
-  platform: [scatter-ly/gcp]
+  service: [scatter-ly/gcp]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Datacenter
@@ -278,4 +318,4 @@ spec:
   owner: [scatter-ly/eng-racoon-gcp]
   region: US
   partOf: [scatter-ly/gcp-global, scatter-ly/gcp-us]
-  platform: [scatter-ly/gcp]
+  service: [scatter-ly/gcp]
