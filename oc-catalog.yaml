@@ -1,5 +1,5 @@
 apiVersion: opencontext.com/v1alpha1
-kind: Scheme
+kind: Platform
 metadata:
   namespace: scatter-ly
   name: blue-sky
@@ -7,7 +7,7 @@ metadata:
   links:
     - url: https://buffet.example.com
       title: Project diagrams
-    - url: http://example.com/schemes/orchard/dashboard
+    - url: http://example.com/platforms/orchard/dashboard
       title: Buffet Metrics Dashboard
       icon: dashboard
 spec:
@@ -17,22 +17,12 @@ apiVersion: opencontext.com/v1alpha1
 kind: Platform
 metadata:
   namespace: scatter-ly
-  name: retail
-  description: User experience platform
-spec:
-  owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
-  scheme: scatter-ly/blue-sky
----
-apiVersion: opencontext.com/v1alpha1
-kind: Scheme
-metadata:
-  namespace: scatter-ly
   name: orchard
   description: Everything related to the squirrel orchard project
   links:
     - url: https://orchard.example.com
       title: Orchard here
-    - url: http://example.com/schemes/orchard/dashboard
+    - url: http://example.com/platforms/orchard/dashboard
       title: Orchard Metrics Dashboard
       icon: dashboard
 spec:
@@ -42,16 +32,16 @@ apiVersion: opencontext.com/v1alpha1
 kind: Platform
 metadata:
   namespace: scatter-ly
-  name: blue-sky
-  description: Everything related to the raccoon Blue Sky Buffet project
+  name: retail
+  description: User experience platform
   links:
-    - url: https://buffet.example.com
-      title: Project diagrams
-    - url: http://example.com/schemes/orchard/dashboard
-      title: Buffet Metrics Dashboard
+    - url: https://retail.example.com
+      title: Retail here
+    - url: http://example.com/platforms/retail/dashboard
+      title: Retail Metrics Dashboard
       icon: dashboard
 spec:
-  owner: [scatter-ly/team-raccoon]
+  owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Service
@@ -62,21 +52,6 @@ metadata:
 spec:
   owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
   platform: scatter-ly/blue-sky
----
-apiVersion: opencontext.com/v1alpha1
-kind: Platform
-metadata:
-  namespace: scatter-ly
-  name: orchard
-  description: Everything related to the squirrel orchard project
-  links:
-    - url: https://orchard.example.com
-      title: Orchard here
-    - url: http://example.com/schemes/orchard/dashboard
-      title: Orchard Metrics Dashboard
-      icon: dashboard
-spec:
-  owner: [scatter-ly/team-squirrel]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Service
