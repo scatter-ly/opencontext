@@ -64,6 +64,16 @@ spec:
   platform: scatter-ly/orchard
 ---
 apiVersion: opencontext.com/v1alpha1
+kind: Service
+metadata:
+  namespace: scatter-ly
+  name: greenhouse
+  description: Greenhouse ops
+spec:
+  owner: [scatter-ly/eng-squirrel]
+  platform: scatter-ly/orchard
+---
+apiVersion: opencontext.com/v1alpha1
 kind: AuxComponent
 metadata:
   namespace: scatter-ly
