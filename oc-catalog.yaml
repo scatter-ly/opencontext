@@ -44,6 +44,21 @@ spec:
   owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
 ---
 apiVersion: opencontext.com/v1alpha1
+kind: Platform
+metadata:
+  namespace: scatter-ly
+  name: dumpster
+  description: Everything related to the raccoon dumpster mapping project
+  links:
+    - url: https://dumpsters.example.com
+      title: Dumpsters map
+    - url: http://example.com/platforms/orchard/dashboard
+      title: Dumpster Metrics Dashboard
+      icon: dashboard
+spec:
+  owner: [scatter-ly/team-raccoon]
+---
+apiVersion: opencontext.com/v1alpha1
 kind: Service
 metadata:
   namespace: scatter-ly
@@ -72,6 +87,16 @@ metadata:
 spec:
   owner: [scatter-ly/eng-squirrel]
   platform: scatter-ly/orchard
+---
+apiVersion: opencontext.com/v1alpha1
+kind: Service
+metadata:
+  namespace: scatter-ly
+  name: dumpster-prod
+  description: Dumpster mapping product line
+spec:
+  owner: [scatter-ly/eng-raccoon, scatter-ly/prod-raccoon]
+  platform: scatter-ly/dumpster
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: AuxComponent
