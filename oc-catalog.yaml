@@ -56,7 +56,7 @@ metadata:
       title: Dumpster Metrics Dashboard
       icon: dashboard
 spec:
-  owner: [scatter-ly/team-raccoon]
+  owner: [scatter-ly/eng-raccoon-eco, scatter-ly/prod-raccoon]
 ---
 apiVersion: opencontext.com/v1alpha1
 kind: Service
